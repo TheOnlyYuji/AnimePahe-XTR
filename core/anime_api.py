@@ -26,7 +26,7 @@ logger = logging.getLogger(__name__)
     reraise=True
 )
 async def search_anime(query: str) -> Optional[List[Dict[str, Any]]]:
-    search_url = f"https://animepahe.si/api?m=search&q={quote(query)}"
+    search_url = f"https://animepahe.com/api?m=search&q={quote(query)}"
     
     async with aiohttp.ClientSession() as session:
         async with session.get(search_url, headers=HEADERS) as response:
@@ -45,7 +45,7 @@ async def search_anime(query: str) -> Optional[List[Dict[str, Any]]]:
     reraise=True
 )
 async def get_episode_list(session_id: str, page: int = 1) -> Dict[str, Any]:
-    episodes_url = f"https://animepahe.si/api?m=release&id={session_id}&sort=episode_asc&page={page}"
+    episodes_url = f"https://animepahe.com/api?m=release&id={session_id}&sort=episode_asc&page={page}"
     
     async with aiohttp.ClientSession() as session:
         async with session.get(episodes_url, headers=HEADERS) as response:
@@ -54,7 +54,7 @@ async def get_episode_list(session_id: str, page: int = 1) -> Dict[str, Any]:
 
 
 def get_latest_releases(page=1):
-    releases_url = f"https://animepahe.si/api?m=airing&page={page}"
+    releases_url = f"https://animepahe.com/api?m=airing&page={page}"
     response = requests.get(releases_url, headers=HEADERS).json()
     return response
 
@@ -165,9 +165,9 @@ def get_available_qualities_with_mapping(download_links: List[Dict[str, Any]], e
 )
 def get_download_links(anime_session, episode_session):
     if '-' in episode_session:
-        episode_url = f"https://animepahe.si/play/{episode_session}"
+        episode_url = f"https://animepahe.com/play/{episode_session}"
     else:
-        episode_url = f"https://animepahe.si/play/{anime_session}/{episode_session}"
+        episode_url = f"https://animepahe.com/play/{anime_session}/{episode_session}"
     
     try:
         session = requests.Session()
@@ -180,7 +180,7 @@ def get_download_links(anime_session, episode_session):
             'Pragma': 'no-cache'
         }
         session.headers.update(local_headers)
-        session.get("https://animepahe.si/")
+        session.get("https://animepahe.com/")
         logger.info(f"Fetching episode page: {episode_url}")
         response = session.get(episode_url)
         response.raise_for_status()
@@ -211,7 +211,7 @@ def get_download_links(anime_session, episode_session):
                     href = element.get('href') or element.get('data-url') or element.get('data-href')
                     if href:
                         if not href.startswith('http'):
-                            href = f"https://animepahe.si{href}"
+                            href = f"https://animepahe.com{href}"
                         links.append({
                             'text': element.get_text(strip=True),
                             'href': href
@@ -224,7 +224,7 @@ def get_download_links(anime_session, episode_session):
                 if any(keyword in href.lower() or keyword in text.lower() 
                       for keyword in ['download', 'kwik.cx', 'video', 'player']):
                     if not href.startswith('http'):
-                        href = f"https://animepahe.si{href}"
+                        href = f"https://animepahe.com{href}"
                     links.append({
                         'text': text or 'Download',
                         'href': href
@@ -307,7 +307,7 @@ def get_dl_link(link):
             'Cache-Control': 'max-age=0'
         }
         
-        scraper.get("https://animepahe.si/", headers=headers)
+        scraper.get("https://animepahe.com/", headers=headers)
         
         resp = scraper.get(link, headers=headers)
         
@@ -441,10 +441,10 @@ def extract_kwik_link(url):
             'Sec-Fetch-Site': 'same-origin',
             'Sec-Fetch-User': '?1',
             'Cache-Control': 'max-age=0',
-            'Referer': 'https://animepahe.si/'
+            'Referer': 'https://animepahe.com/'
         }
         
-        scraper.get("https://animepahe.si/", headers=headers)
+        scraper.get("https://animepahe.com/", headers=headers)
         
         response = scraper.get(url, headers=headers)
         response.raise_for_status()
