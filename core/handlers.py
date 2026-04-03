@@ -762,7 +762,7 @@ def register_handlers():
         try:
             status_msg = await safe_respond(event, "<blockquote><b>ғᴇᴛᴄʜɪɴɢ ʟᴀᴛᴇsᴛ ᴀɴɪᴍᴇ ʟɪsᴛ...</blockquote></b>", parse_mode='html')
             
-            API_URL = "https://animepahe.si/api?m=airing&page=1"
+            API_URL = "https://animepahe.com/api?m=airing&page=1"
             async with aiohttp.ClientSession() as session:
                 async with session.get(API_URL, headers=HEADERS) as response:
                     if response.status == 200:
@@ -778,7 +778,7 @@ def register_handlers():
                             title = anime.get('anime_title', 'Unknown Title')
                             anime_session = anime.get('anime_session', '')
                             episode = anime.get('episode', 'N/A')
-                            link = f"https://animepahe.si/anime/{anime_session}" if anime_session else "#"
+                            link = f"https://animepahe.com/anime/{anime_session}" if anime_session else "#"
                             
                             latest_anime_text += f"<blockquote><b>{idx}. <a href='{link}'>{title}</a> [E{episode}]</b></blockquote>\n"
                         
@@ -798,7 +798,7 @@ def register_handlers():
         try:
             status_msg = await safe_respond(event, "<blockquote><b>ғᴇᴛᴄʜɪɴɢ ᴀɪʀɪɴɢ ᴀɴɪᴍᴇ ʟɪsᴛ...</blockquote></b>", parse_mode='html')
             
-            API_URL = "https://animepahe.si/anime/airing"
+            API_URL = "https://animepahe.com/anime/airing"
             async with aiohttp.ClientSession() as session:
                 async with session.get(API_URL, headers=HEADERS) as response:
                     if response.status == 200:
@@ -816,7 +816,7 @@ def register_handlers():
                             href = anime.get("href", "")
                             
                             if href:
-                                link = f"https://animepahe.si{href}"
+                                link = f"https://animepahe.com{href}"
                                 airing_anime_text += f"<blockquote><b>{idx}. <a href='{link}'>{title}</a></b></blockquote>\n"
                             else:
                                 airing_anime_text += f"<blockquote><b>{idx}. {title}</b></blockquote>\n"
@@ -839,7 +839,7 @@ def register_handlers():
             try:
                 status_msg = await safe_respond(event, "<blockquote><b>ғᴇᴛᴄʜɪɴɢ ʟᴀᴛᴇsᴛ ᴀɴɪᴍᴇ ʟɪsᴛ...</blockquote></b>", parse_mode='html')
                 
-                API_URL = "https://animepahe.si/api?m=airing&page=1"
+                API_URL = "https://animepahe.com/api?m=airing&page=1"
                 async with aiohttp.ClientSession() as session:
                     async with session.get(API_URL, headers=HEADERS) as response:
                         if response.status == 200:
@@ -890,7 +890,7 @@ def register_handlers():
             try:
                 status_msg = await safe_respond(event, "<blockquote><b>ғᴇᴛᴄʜɪɴɢ ʟᴀᴛᴇsᴛ ᴀɴɪᴍᴇ ʟɪsᴛ...</blockquote></b>", parse_mode='html')
                 
-                API_URL = "https://animepahe.si/api?m=airing&page=1"
+                API_URL = "https://animepahe.com/api?m=airing&page=1"
                 async with aiohttp.ClientSession() as session:
                     async with session.get(API_URL, headers=HEADERS) as response:
                         if response.status == 200:
