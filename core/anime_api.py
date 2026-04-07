@@ -180,7 +180,7 @@ def get_download_links(anime_session, episode_session):
             'Pragma': 'no-cache'
         }
         session.headers.update(local_headers)
-        session.get("https://animepahe.com/")
+        session.get("https://animepahe.pw/")
         logger.info(f"Fetching episode page: {episode_url}")
         response = session.get(episode_url)
         response.raise_for_status()
