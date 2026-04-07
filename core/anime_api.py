@@ -224,7 +224,7 @@ def get_download_links(anime_session, episode_session):
                 if any(keyword in href.lower() or keyword in text.lower() 
                       for keyword in ['download', 'kwik.cx', 'video', 'player']):
                     if not href.startswith('http'):
-                        href = f"https://animepahe.com{href}"
+                        href = f"https://animepahe.pw{href}"
                     links.append({
                         'text': text or 'Download',
                         'href': href
@@ -441,7 +441,7 @@ def extract_kwik_link(url):
             'Sec-Fetch-Site': 'same-origin',
             'Sec-Fetch-User': '?1',
             'Cache-Control': 'max-age=0',
-            'Referer': 'https://animepahe.com/'
+            'Referer': 'https://animepahe.pw/'
         }
         
         scraper.get("https://animepahe.pw/", headers=headers)
