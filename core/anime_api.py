@@ -26,7 +26,7 @@ logger = logging.getLogger(__name__)
     reraise=True
 )
 async def search_anime(query: str) -> Optional[List[Dict[str, Any]]]:
-    search_url = f"https://animepahe.com/api?m=search&q={quote(query)}"
+    search_url = f"https://animepahe.pw/api?m=search&q={quote(query)}"
     
     async with aiohttp.ClientSession() as session:
         async with session.get(search_url, headers=HEADERS) as response:
@@ -45,7 +45,7 @@ async def search_anime(query: str) -> Optional[List[Dict[str, Any]]]:
     reraise=True
 )
 async def get_episode_list(session_id: str, page: int = 1) -> Dict[str, Any]:
-    episodes_url = f"https://animepahe.com/api?m=release&id={session_id}&sort=episode_asc&page={page}"
+    episodes_url = f"https://animepahe.pw/api?m=release&id={session_id}&sort=episode_asc&page={page}"
     
     async with aiohttp.ClientSession() as session:
         async with session.get(episodes_url, headers=HEADERS) as response:
@@ -54,7 +54,7 @@ async def get_episode_list(session_id: str, page: int = 1) -> Dict[str, Any]:
 
 
 def get_latest_releases(page=1):
-    releases_url = f"https://animepahe.com/api?m=airing&page={page}"
+    releases_url = f"https://animepahe.pw/api?m=airing&page={page}"
     response = requests.get(releases_url, headers=HEADERS).json()
     return response
 
@@ -165,9 +165,9 @@ def get_available_qualities_with_mapping(download_links: List[Dict[str, Any]], e
 )
 def get_download_links(anime_session, episode_session):
     if '-' in episode_session:
-        episode_url = f"https://animepahe.com/play/{episode_session}"
+        episode_url = f"https://animepahe.pw/play/{episode_session}"
     else:
-        episode_url = f"https://animepahe.com/play/{anime_session}/{episode_session}"
+        episode_url = f"https://animepahe.pw/play/{anime_session}/{episode_session}"
     
     try:
         session = requests.Session()
@@ -211,7 +211,7 @@ def get_download_links(anime_session, episode_session):
                     href = element.get('href') or element.get('data-url') or element.get('data-href')
                     if href:
                         if not href.startswith('http'):
-                            href = f"https://animepahe.com{href}"
+                            href = f"https://animepahe.pw{href}"
                         links.append({
                             'text': element.get_text(strip=True),
                             'href': href
@@ -307,7 +307,7 @@ def get_dl_link(link):
             'Cache-Control': 'max-age=0'
         }
         
-        scraper.get("https://animepahe.com/", headers=headers)
+        scraper.get("https://animepahe.pw/", headers=headers)
         
         resp = scraper.get(link, headers=headers)
         
@@ -444,7 +444,7 @@ def extract_kwik_link(url):
             'Referer': 'https://animepahe.com/'
         }
         
-        scraper.get("https://animepahe.com/", headers=headers)
+        scraper.get("https://animepahe.pw/", headers=headers)
         
         response = scraper.get(url, headers=headers)
         response.raise_for_status()
