@@ -644,7 +644,7 @@ def register_handlers():
                         ]
                     else:
                         buttons = [
-                            [Button.url("𝗗𝗲𝘃𝗲𝗹𝗼𝗽𝗲𝗿", "https://t.me/KamiKaito"),
+                            [Button.url("𝗗𝗲𝘃𝗲𝗹𝗼𝗽𝗲𝗿", "https://t.me/x_lost_existence_x"),
                             Button.url("𝗠𝗮𝗶𝗻 𝗖𝗵𝗮𝗻𝗻𝗲𝗹", "https://t.me/GenAnimeOngoing")],
                             [Button.url("𝗕𝗮𝗰𝗸𝘂𝗽 𝗖𝗵𝗮𝗻𝗻𝗲𝗹", "https://t.me/OngoingAnimeBackup")]
                         ]
@@ -798,7 +798,7 @@ def register_handlers():
         try:
             status_msg = await safe_respond(event, "<blockquote><b>ғᴇᴛᴄʜɪɴɢ ᴀɪʀɪɴɢ ᴀɴɪᴍᴇ ʟɪsᴛ...</blockquote></b>", parse_mode='html')
             
-            API_URL = "https://animepahe.com/anime/airing"
+            API_URL = "https://animepahe.pw/anime/airing"
             async with aiohttp.ClientSession() as session:
                 async with session.get(API_URL, headers=HEADERS) as response:
                     if response.status == 200:
