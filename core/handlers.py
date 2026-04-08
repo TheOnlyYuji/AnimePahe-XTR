@@ -816,7 +816,7 @@ def register_handlers():
                             href = anime.get("href", "")
                             
                             if href:
-                                link = f"https://animepahe.com{href}"
+                                link = f"https://animepahe.pw{href}"
                                 airing_anime_text += f"<blockquote><b>{idx}. <a href='{link}'>{title}</a></b></blockquote>\n"
                             else:
                                 airing_anime_text += f"<blockquote><b>{idx}. {title}</b></blockquote>\n"
@@ -839,7 +839,7 @@ def register_handlers():
             try:
                 status_msg = await safe_respond(event, "<blockquote><b>ғᴇᴛᴄʜɪɴɢ ʟᴀᴛᴇsᴛ ᴀɴɪᴍᴇ ʟɪsᴛ...</blockquote></b>", parse_mode='html')
                 
-                API_URL = "https://animepahe.com/api?m=airing&page=1"
+                API_URL = "https://animepahe.pw/api?m=airing&page=1"
                 async with aiohttp.ClientSession() as session:
                     async with session.get(API_URL, headers=HEADERS) as response:
                         if response.status == 200:
@@ -890,7 +890,7 @@ def register_handlers():
             try:
                 status_msg = await safe_respond(event, "<blockquote><b>ғᴇᴛᴄʜɪɴɢ ʟᴀᴛᴇsᴛ ᴀɴɪᴍᴇ ʟɪsᴛ...</blockquote></b>", parse_mode='html')
                 
-                API_URL = "https://animepahe.com/api?m=airing&page=1"
+                API_URL = "https://animepahe.pw/api?m=airing&page=1"
                 async with aiohttp.ClientSession() as session:
                     async with session.get(API_URL, headers=HEADERS) as response:
                         if response.status == 200:
@@ -1237,9 +1237,9 @@ def register_handlers():
                     ]
             else:
                 buttons = [
-                    [Button.url("𝗗𝗲𝘃𝗲𝗹𝗼𝗽𝗲𝗿", "https://t.me/KamiKaito"),
-                     Button.url("𝗠𝗮𝗶𝗻 𝗖𝗵𝗮𝗻𝗻𝗲𝗹", "https://t.me/GenAnimeOngoing")],
-                    [Button.url("𝗕𝗮𝗰𝗸𝘂𝗽 𝗖𝗵𝗮𝗻𝗻𝗲𝗹", "https://t.me/OngoingAnimeBackup")]
+                    [Button.url("𝗗𝗲𝘃𝗲𝗹𝗼𝗽𝗲𝗿", "https://t.me/X_Lost_Existence_X"),
+                     Button.url("𝗠𝗮𝗶𝗻 𝗖𝗵𝗮𝗻𝗻𝗲𝗹", "https://t.me/Anime_XTR")],
+                    [Button.url("𝗕𝗮𝗰𝗸𝘂𝗽 𝗖𝗵𝗮𝗻𝗻𝗲𝗹", "https://t.me/XTRBackup")]
                 ]
 
             try:
@@ -1247,7 +1247,7 @@ def register_handlers():
                     event.chat_id,
                     event,
                     f"<blockquote><b>🍁 Hᴇʏ, {mention}!</b></blockquote>\n"
-                    f"<blockquote><b><i>I'ᴍ ᴀ ᴀᴜᴛᴏ ᴀɴɪᴍᴇ ʙᴏᴛ. ɪ ᴄᴀɴ ᴅᴏᴡɴʟᴏᴀᴅ ᴏɴɢᴏɪɴɢ ᴀɴᴅ ғɪɴɪsʜᴇᴅ ᴀɴɪᴍᴇ ғʀᴏᴍ ᴀɴɪᴍᴇᴘᴀʜᴇ.ʀᴜ ᴀɴᴅ ᴜᴘʟᴏᴀᴅ ᴛʜᴏsᴇ ғɪʟᴇs ᴏɴ ʏᴏᴜʀ ᴄʜᴀɴᴇʟ ᴅɪʀᴇᴄᴛʟʏ...</i></b></blockquote>"
+                    f"<blockquote><b><i>I'ᴍ ᴀ ᴀᴜᴛᴏ ᴀɴɪᴍᴇ ʙᴏᴛ. ɪ ᴄᴀɴ ᴅᴏᴡɴʟᴏᴀᴅ ᴏɴɢᴏɪɴɢ ᴀɴᴅ ғɪɴɪsʜᴇᴅ ᴀɴɪᴍᴇ ғʀᴏᴍ ᴀɴɪᴍᴇᴘᴀʜᴇ.ᴘᴡ ᴀɴᴅ ᴜᴘʟᴏᴀᴅ ᴛʜᴏsᴇ ғɪʟᴇs ᴏɴ ʏᴏᴜʀ ᴄʜᴀɴᴇʟ ᴅɪʀᴇᴄᴛʟʏ...</i></b></blockquote>"
                     f"<blockquote><b>ᴘᴏᴡᴇʀᴇᴅ ʙʏ - "
                     f"<a href='https://t.me/{CHANNEL_USERNAME.lstrip('@')}'>{CHANNEL_NAME}</a>"
                     f"</b></blockquote>",
@@ -1267,14 +1267,14 @@ def register_handlers():
                     ]
                 else:
                     buttons = [
-                        [Button.url("𝗗𝗲𝘃𝗲𝗹𝗼𝗽𝗲𝗿", "https://t.me/KamiKaito"),
-                        Button.url("𝗠𝗮𝗶𝗻 𝗖𝗵𝗮𝗻𝗻𝗲𝗹", "https://t.me/GenAnimeOngoing")],
-                        [Button.url("𝗕𝗮𝗰𝗸𝘂𝗽 𝗖𝗵𝗮𝗻𝗻𝗲𝗹", "https://t.me/OngoingAnimeBackup")]
+                        [Button.url("𝗗𝗲𝘃𝗲𝗹𝗼𝗽𝗲𝗿", "https://t.me/X_Lost_Existence_X"),
+                        Button.url("𝗠𝗮𝗶𝗻 𝗖𝗵𝗮𝗻𝗻𝗲𝗹", "https://t.me/Anime_XTR")],
+                        [Button.url("𝗕𝗮𝗰𝗸𝘂𝗽 𝗖𝗵𝗮𝗻𝗻𝗲𝗹", "https://t.me/XTRBackup")]
                     ]
                 await safe_edit(
                     event,
                     f"<blockquote><b>🍁 Hᴇʏ, {mention}!</b></blockquote>\n"
-                    f"<blockquote><b><i>I'ᴍ ᴀ ᴀᴜᴛᴏ ᴀɴɪᴍᴇ ʙᴏᴛ. ɪ ᴄᴀɴ ᴅᴏᴡɴʟᴏᴀᴅ ᴏɴɢᴏɪɴɢ ᴀɴᴅ ғɪɴɪsʜᴇᴅ ᴀɴɪᴍᴇ ғʀᴏᴍ ᴀɴɪᴍᴇᴘᴀʜᴇ.ʀᴜ ᴀɴᴅ ᴜᴘʟᴏᴀᴅ ᴛʜᴏsᴇ ғɪʟᴇs ᴏɴ ʏᴏᴜʀ ᴄʜᴀɴᴇʟ ᴅɪʀᴇᴄᴛʟʏ...</i></b></blockquote>"
+                    f"<blockquote><b><i>I'ᴍ ᴀ ᴀᴜᴛᴏ ᴀɴɪᴍᴇ ʙᴏᴛ. ɪ ᴄᴀɴ ᴅᴏᴡɴʟᴏᴀᴅ ᴏɴɢᴏɪɴɢ ᴀɴᴅ ғɪɴɪsʜᴇᴅ ᴀɴɪᴍᴇ ғʀᴏᴍ ᴀɴɪᴍᴇᴘᴀʜᴇ.ᴘᴡ ᴀɴᴅ ᴜᴘʟᴏᴀᴅ ᴛʜᴏsᴇ ғɪʟᴇs ᴏɴ ʏᴏᴜʀ ᴄʜᴀɴᴇʟ ᴅɪʀᴇᴄᴛʟʏ...</i></b></blockquote>"
                     f"<blockquote><b>ᴘᴏᴡᴇʀᴇᴅ ʙʏ - "
                     f"<a href='https://t.me/{CHANNEL_USERNAME.lstrip('@')}'>{CHANNEL_NAME}</a>"
                     f"</b></blockquote>",
